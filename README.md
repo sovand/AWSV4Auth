@@ -14,13 +14,13 @@ For those who uses Amazon Product Advertisement API(PAAPI), there was no .Net co
                 {"host", "webservices.amazon.com" },
                 {"x-amz-target", "com.amazon.paapi5.v1.ProductAdvertisingAPIv1.SearchItems" }
             };
-            var payload = "{\"Marketplace\":\"www.amazon" + _locale + "\",\"PartnerType\":\"Associates\",\"PartnerTag\":\"" + _associateTag + "\",\"Keywords\":\""
-                + keywords + "\",\"SearchIndex\":\"All\",\"ItemCount\":3,\"Resources\":[" + K_RESOURCES + "]}";
+            var payload = "{\"Marketplace\":\"www.amazon" + "<use locale>" + "\",\"PartnerType\":\"Associates\",\"PartnerTag\":\"" + "<associated tag>" + "\",\"Keywords\":\""
+                + "<Keywords i.e. kindle>" + "\",\"SearchIndex\":\"All\",\"ItemCount\":3,\"Resources\":[" + "<For available resources, visit https://webservices.amazon.com/paapi5/documentation/browsenodeinfo.html>" + "]}";
                 var auth = new AWSV4Auth("<AWS Access key>", "<AWS Secret Key>", "/paapi5/searchitems", "us-east-1", "ProductAdvertisingAPI", "POST", headers, payload);
             var resHeaders = auth.GetHeaders();
 
             var requestUri = "https://webservices.amazon.com/paapi5/searchitems";
-            string contentString = await PostRequest(requestUri, resHeaders, payload);
+            var response = await PostRequest(requestUri, resHeaders, payload);
 3.
 
                 var request = (HttpWebRequest)WebRequest.Create(requestUri);
