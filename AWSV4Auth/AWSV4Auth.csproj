@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Sovan Kumar Das</Authors>
+    <Company />
+    <PackageTags>Amazon,AWS Signature,V4,AWSV4Auth</PackageTags>
+  </PropertyGroup>
+
+</Project>
